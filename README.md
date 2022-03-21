@@ -13,7 +13,7 @@ An example of usage could be:
 docker run -p 8888:8888 --name ipharo -v ~/Desktop/notebooks:/notebooks  euberdeveloper/ipharo
 ```
 
-This would start a jupyter notebook supporting Pharo code inside a docker container, exposing it to port 8888 of localhost. By going to `http://localhost:8888` you could try it yourself. 
+This would start a jupyter notebook supporting Pharo code inside a docker container, exposing it to port 8888 of localhost. By going to `http://localhost:8888` you could try it yourself (note that the token to access the notebooks is shown in the log, if not passed with the env vars). 
 
 The notebooks created would be stored in the `/notebooks` directory, in the phisical Desktop of the user (this is due to the `-v` option).
 
