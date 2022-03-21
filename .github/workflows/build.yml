@@ -13,10 +13,19 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v2
 
+      - name: User Python 3.x
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.x
+          architecture: x64
+
       - name: Use Node.js 16.x
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
+
+      - name: Install jupyter notebook
+        run: pip install jupyter
 
       - name: Generate launch.sh
         run: |
