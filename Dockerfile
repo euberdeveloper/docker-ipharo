@@ -41,13 +41,17 @@ RUN ./pharo Pharo.image eval --save "Metacello new \
     repository: 'github://jmari/IPharo:master/repository'; \
     load: 'default'"
 
+# Create the notebooks directory
+RUN mkdir /notebooks
+
 # Copy launch.sh
 COPY launch.sh .
 
 # Declare default envs
 ENV ALLOW_ROOT=TRUE
-ENV NO_BROWSER=TRUE
 ENV IP=0.0.0.0
+ENV NOTEBOOK_DIR=/notebooks
+ENV NO_BROWSER=TRUE
 
 # Launch jupyter notebook
 CMD [ "bash", "launch.sh" ]
